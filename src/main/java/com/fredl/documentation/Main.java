@@ -3,12 +3,17 @@ package com.fredl.documentation;
 public class Main{
 
     public static void main(String[] args){
+        DocuLogger apiJSLogger;
 
+        // Deklare documentation-logger for api.js
         try{
-            DocuLogger videoJSLogger = new DocuLogger("./src/main/resources/api.js");
+            apiJSLogger = new DocuLogger("./src/main/resources/api.js");
         }catch(NullPointerException npe){
             System.out.println("THe filepath provided is not valid!");
         }
+
+
+
 
 
     }

@@ -4,7 +4,10 @@ import java.io.File;
 /**
  * @desc:   DocuLogger.io handles the process of automatically documenting your functions and classes, when programming.
  *
- *          When the object is created
+ *              1. When the object is created it will first checks if the file exists. If not, the class will
+ *                 throw an NullPointerException
+ *              2. When the file is identified and loaded. The program will try to identify
+ *
  * @guide:  The way you go forth on using this object is by follow the following steps
  *              1. When the object is instantiated, you give it the path to the program you would like to document
  */
