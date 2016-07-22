@@ -3,7 +3,9 @@ package com.fredl.documentation;
 import java.util.HashMap;
 
 /**
- * Created by Acer on 22.07.2016.
+ *  @author: Fredrik F. Lindhagen <fred.lindh96@gmail.com>
+ *  @created: 22.07.2016
+ *  @desc:
  */
 public enum DocLogInFiles {
     PYTHON("Python", ".py", "#", "'''", "", "'''"),
