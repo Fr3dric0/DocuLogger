@@ -1,9 +1,9 @@
 package com.fredl.documentation;
 import com.fredl.documentation.controllers.FileIdentifier;
 import com.fredl.documentation.controllers.extractor.CommentExtractor;
+import com.fredl.documentation.controllers.mapper.CommentMapper;
 import com.fredl.documentation.data.SupportedFiles;
-import com.fredl.documentation.models.ExtractedComment;
-import com.fredl.documentation.models.Function;
+import com.fredl.documentation.models.Comment;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -36,9 +36,9 @@ public class DocuLogger {
         // The controller which masters the extraction.
         CommentExtractor extractor = new CommentExtractor(path, filetype);
 
-        ArrayList<ExtractedComment> comments = extractor.extract();
+        ArrayList<Comment> comments = extractor.extract();
 
-
+        CommentMapper cm = new CommentMapper(comments.get(0));
 
     }
 

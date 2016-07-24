@@ -1,7 +1,7 @@
 package com.fredl.documentation.controllers.extractor;
 
 import com.fredl.documentation.data.SupportedFiles;
-import com.fredl.documentation.models.ExtractedComment;
+import com.fredl.documentation.models.Comment;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public class CommentExtractor {
     }
 
 
-    public ArrayList<ExtractedComment> extract(){
+    public ArrayList<Comment> extract(){
         switch (filetype){
             case JAVA:
                 throw new NullPointerException("JAVA is currently not supported");
