@@ -46,9 +46,7 @@ public class Function {
         this.function = function;
         this.description = description;
 
-
     }
-
 
     public Returns getReturnDetails(){
         return this.returns;
@@ -116,6 +114,20 @@ public class Function {
             return false;
         }
 
+        return true;
+    }
+
+    /**
+     *  @param:     (Parameter) param   The parameter we want to remove
+     *  @desc:      Removes the param identical to the argument
+     *  @return:    (Boolean)   True if everything went ok. If not, return false
+     * */
+    public boolean removeParam(Parameter param){
+        try{
+            this.parameters.remove(param);
+        }catch(Exception e){
+            return false;
+        }
         return true;
     }
 }

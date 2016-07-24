@@ -10,7 +10,11 @@ public class Returns {
     private String details;
 
     public Returns(String type, String details){
-        this.type = type;
+        if(type.equals("") || type == null){
+            this.type = "<UNDEFINED>";
+        }else {
+            this.type = type;
+        }
         this.details = details;
     }
 

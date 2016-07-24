@@ -1,4 +1,4 @@
-package com.fredl.documentation;
+package com.fredl.documentation.data;
 
 import java.util.HashMap;
 
@@ -7,26 +7,33 @@ import java.util.HashMap;
  *  @created: 22.07.2016
  *  @desc:
  */
-public enum DocLogInFiles {
+public enum SupportedFiles {
     PYTHON("Python", ".py", "#", "'''", "", "'''"),
     JAVASCRIPT("JavaScript", ".js", "//", "/*", "*", "*/"),
     JAVA("JAVA", ".java", "//", "/*", "*", "*/"),
     PHP("PHP", ".php", "//", "/*", "*", "*/");
 
     private final String name;
-    private final String filename;
+    private final String fileprefix;
     private final String commentSingleline;
     private final String commentMultilineStart;
     private final String commentMultilineEnd;
     private final String commentMultilineMiddle;
 
-    DocLogInFiles(String name, String filename, String commentSingleline, String commentMultilineStart, String commentMultilineMiddle, String commentMultilineEnd){
+    private SupportedFiles(String name, String fileprefix, String commentSingleline, String commentMultilineStart, String commentMultilineMiddle, String commentMultilineEnd){
         this.name = name;
-        this.filename = filename;
+        this.fileprefix = fileprefix;
         this.commentSingleline = commentSingleline;
         this.commentMultilineStart = commentMultilineStart;
         this.commentMultilineMiddle = commentMultilineMiddle;
         this.commentMultilineEnd = commentMultilineEnd;
+    }
+
+    public String getFilename(){
+        return this.name;
+    }
+    public String getFileprefix(){
+        return this.fileprefix;
     }
 
     public HashMap<String, String> getMultilineCommentOperator(){
@@ -45,6 +52,6 @@ public enum DocLogInFiles {
 
     @Override
     public String toString(){
-        return this.name + " ("+this.filename+")";
+        return this.name + " ("+this.fileprefix+")";
     }
 }

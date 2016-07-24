@@ -1,5 +1,14 @@
 package com.fredl.documentation;
+import com.fredl.documentation.controllers.FileIdentifier;
+import com.fredl.documentation.controllers.extractor.CommentExtractor;
+import com.fredl.documentation.data.SupportedFiles;
+import com.fredl.documentation.models.ExtractedComment;
+import com.fredl.documentation.models.Function;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * @desc:   DocuLogger.io handles the process of automatically documenting your functions and classes, when programming.
@@ -12,17 +21,27 @@ import java.io.File;
  *              1. When the object is instantiated, you give it the path to the program you would like to document
  */
 public class DocuLogger {
+    private Gson gson = new GsonBuilder().setPrettyPrinting().create(); // Enable pretty formatting
+    private File inFile;
 
     public DocuLogger(String path){
         if(fileExists(path)){
-            System.out.println("Hi and welcome to DocuLogger!");
+            //System.out.println("Hi and welcome to DocuLogger!");
         }else{
             throw new NullPointerException("File does not exist!");
         }
 
+        SupportedFiles filetype = FileIdentifier.identify(path);
+
+        // The controller which masters the extraction.
+        CommentExtractor extractor = new CommentExtractor(path, filetype);
+
+        ArrayList<ExtractedComment> comments = extractor.extract();
+
 
 
     }
+
 
     /**
      *  @param: (String)    path    Path to the file
@@ -32,7 +51,7 @@ public class DocuLogger {
      * */
     private boolean fileExists(String path){
         File testFile = new File(path);
-
         return testFile.exists();
     }
+
 }
