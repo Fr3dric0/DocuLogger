@@ -37,13 +37,16 @@ router.get('/', function (req, res) {
     });
 });
 /**
- *  @param: (MongoObject)   Scheema     The mongodb Scheema to collect data from
- *          (Object)        conf        Different configuration data, like sorting, etc
- *              (Boolean)       conf.skip   If the user want's to skip collection of data from the specified scheema.
+ *  @param: [MongoObject]   Scheema     The mongodb Scheema to collect data from
+ *          [Object]        conf        Different configuration data, like sorting, etc
+ *                                      # conf.skip:
+ *                                          If@ the user want's to skip collection of data from the specified scheema.
  *                                          he can set skip to true
- *
+ *          [Function]       callback   The callback function (Lorem lipsum dolor sit amed)
  *  @desc:  Uses the provided scheema and conf data, to get data from MongoDB.
- *  @return: (Function)     Callback    Callback method with data from the scheema, and evt. errors
+ *  @return: (Function]     Callback method with data from the scheema, and evt. errors.
+ *                          Lorem Lipsum continuing to go fkndrgøjkner   bla bla bla
+ *
  * */
 function getDataFromScheema(Scheema, conf, callback) {
     // Check if user wants to skip query
@@ -412,7 +415,7 @@ function validateEpisodeNumber(media, conf) {
  *          Then checks if conf.season exists and is a valid number.
  *          Last, add the values season and episodes
  *
- *  @return (Object) The whole season in print-friendly format
+ *  @return: (Object) The whole season in print-friendly format
  * */
 function createPrintableSeason(media, conf, callback) {
     var errorMsg = { title: "MEDIA PARSING ERROR", message: "", statusCode: 500 };

@@ -62,6 +62,19 @@ public class Function {
     }
 
     /**
+     *  @param:     (String)    comment     Unnmapped returns-description
+     *  @desc:      Creates a new Returns object, which handles the actual mapping of 'type' and 'description'
+     *  @return:    (Boolean)   True if everything went successfull. If not, return false
+     * */
+    public boolean setReturnDetails(String comment){
+        try{
+            this.returns = new Returns(comment);
+        }catch(Exception e){
+            return false;
+        }
+        return true;
+    }
+    /**
      *  @param:     (String)    type    What type the return value should return
      *              (String)    details Details about what the function will return.
      *                                  Thereby the user knows what he can expect from the function
@@ -84,6 +97,14 @@ public class Function {
         return true;
     }
 
+    public boolean addParam(String comment){
+        try{
+            this.parameters = Parameter.map(comment);
+        }catch(Exception e){
+            return false;
+        }
+        return true;
+    }
     /**
      *  @param:     (String)    name    The name of the parameter (much like this one)
      *              (String)    type    The datatype the object should be

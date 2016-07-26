@@ -1,9 +1,10 @@
 package com.fredl.documentation.models;
 
 /**
- * @author: Fredrik F. Lindhagen <fred.lindh96@gmail.com>
- * @created: 24.07.2016
- * @desc:
+ * @author:     Fredrik F. Lindhagen <fred.lindh96@gmail.com>
+ * @created:    24.07.2016
+ * @desc:       Comment class is used to store basic information about the documentation, before it is mapped.
+ *              This class handles the basic trimming of both the function-name and the actual comment.
  */
 public class Comment {
     private String comment;

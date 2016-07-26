@@ -9,7 +9,7 @@ public class Main{
         try{
             apiJSLogger = new DocuLogger("./src/main/resources/api.js");
         }catch(NullPointerException npe){
-            System.out.println("THe filepath provided is not valid!");
+            npe.printStackTrace();
         }
 
 

@@ -39,6 +39,7 @@ public class DocuLogger {
         ArrayList<Comment> comments = extractor.extract();
 
         CommentMapper cm = new CommentMapper(comments.get(0));
+        cm.map();
 
     }
 
