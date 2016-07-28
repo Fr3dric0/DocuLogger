@@ -39,9 +39,7 @@ public class DocuLogger {
 
     public DocuLogger(String path, String outFolder){
 
-        if(fileExists(path)){
-            //System.out.println("Hi and welcome to DocuLogger!");
-        }else{
+        if(!fileExists(path)){
             throw new NullPointerException("File does not exist!");
         }
 
