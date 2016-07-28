@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d17f69ee-1b3f-431f-882f-5cfd178300b6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fredl/documentation/DocuLogger.java" afterPath="$PROJECT_DIR$/src/main/java/com/fredl/documentation/DocuLogger.java" />
     </list>
     <ignored path="DocuLogger.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1099,7 +1098,14 @@
       <option name="project" value="LOCAL" />
       <updated>1469746692068</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finished CommentExtractor for JavaScript. Also added a simple terminal user menu">
+      <created>1469748224786</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1469748224786</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
