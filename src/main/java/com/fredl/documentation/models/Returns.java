@@ -13,6 +13,23 @@ import java.util.regex.Pattern;
 public class Returns {
     private String type;
     private String details;
+    private static final String[] PARAM= {"[", "]"};
+    private static final String[] ALT_PARAM = {"(", ")"};
+
+    /**
+     *  @desc:  Returns constructor for when the comment hasn't been mapped yet
+     * */
+    public Returns(String com){
+        this.type = null;
+        this.details = null;
+
+        try {
+            mapReturns(com);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }
 
     public Returns(String type, String details){
         if(type.equals("") || type == null){
@@ -23,14 +40,6 @@ public class Returns {
         this.details = details;
     }
 
-    /**
-     *  @desc:  Returns constructor for when the comment hasn't been mapped yet
-     * */
-    public Returns(String com){
-        this.type = null;
-        this.details = null;
-        this.mapReturns(com);
-    }
 
     private void mapReturns(String com){
         this.type = findType(com);
@@ -46,7 +55,7 @@ public class Returns {
      * */
     private String cleanDescription(String str){
         String replaceReturnTag = String.format("(@%s):?", ValidDocTags.RETURN.getName()); // Identifies @return or @return:
-        String replaceTypeTag = "(" + this.type + ")";
+        String replaceTypeTag = PARAM[0] + this.type + PARAM[1];
 
         String buffer = str.replace(replaceTypeTag, "");
         buffer = buffer.replaceAll(replaceReturnTag, "");
@@ -91,7 +100,25 @@ public class Returns {
      *  @return:    (String)    The datatype matching the description
      * */
     private String findType(String str){
-        return str.substring(str.indexOf("(")+1, str.indexOf(")"));
+        String undefined = "<UNDEFINED>";
+
+        //  If we are missing either the start ('[') or end (']') of the param,
+        //  then we return the datatype as undefined, and print an error to the console
+        if( !str.contains(PARAM[0]) || !str.contains(PARAM[1]) ){
+            System.err.println("SYNTAX ERROR DocuLogger:\tDatatype declaration in Returns comment");
+            return undefined;
+        }
+
+        try{
+            return str.substring(str.indexOf(PARAM[0])+1, str.indexOf(PARAM[1]));
+        }catch(IndexOutOfBoundsException ioe){
+            System.err.println("SYNTAX ERROR: Wrong use of datatype declaration in comment");
+            try {
+                return str.substring(str.indexOf(ALT_PARAM[0]) + 1, str.indexOf(ALT_PARAM[1]));
+            }catch (IndexOutOfBoundsException ioe2){
+                return undefined;
+            }
+        }
     }
 
 
@@ -106,6 +133,6 @@ public class Returns {
     // toString
     @Override
     public String toString(){
-        return String.format("(%s) %s", this.type, this.details);
+        return String.format("%s%s%s\t%s",PARAM[0], this.type, PARAM[1], this.details);
     }
 }

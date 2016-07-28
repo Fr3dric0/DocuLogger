@@ -36,7 +36,11 @@ public class Comment {
             trimmed.delete(0, classPrefix.length());
         }
 
-        return trimmed.toString();
+        // Saves everything from the function-name, to the '(' sign
+        String name = trimmed.toString();
+        name = name.substring(0, name.indexOf("("));
+
+        return name;
     }
 
 
@@ -72,6 +76,8 @@ public class Comment {
 
             trimmed += l.substring(startPos, l.length());
 
+            // !IMPORTANT! - The other classes splits the comment string into lines.
+            //               Therefore do we have to keep splitting the comment into lines here.
             if(idx != lines.length-1){
                 trimmed += "\n";
             }

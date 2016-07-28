@@ -23,6 +23,13 @@ public class FileIdentifier {
             sf = supportedfiles[i]; // The value that could be returned
 
             prefix = sf.getFileprefix();
+
+            // If the length of the prefix is larger than the prefix itself, there is no point in checking..
+            if(prefix.length() > path.length()){
+                System.out.println("TRUE");
+                continue;
+            }
+
             buffer = path.substring(path.length()-prefix.length(), path.length());
 
             if(buffer.equals(prefix)){
@@ -33,14 +40,4 @@ public class FileIdentifier {
         return null;
     }
 
-    private static String[] getFileprefixes(){
-        SupportedFiles[] sf = SupportedFiles.values();
-        String[] prefixes = new String[sf.length];
-
-        for(int i = 0; i < sf.length; i++){
-            prefixes[i] = sf[i].getFileprefix();
-        }
-
-        return prefixes;
-    }
 }

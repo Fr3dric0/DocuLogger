@@ -89,7 +89,7 @@ public class Function {
         }
 
         try {
-            returns = new Returns(type, details);
+            this.returns = new Returns(type, details);
         }catch(Exception e){
             return false;
         }

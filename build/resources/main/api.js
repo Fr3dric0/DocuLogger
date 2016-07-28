@@ -41,10 +41,10 @@ router.get('/', function (req, res) {
  *          [Object]        conf        Different configuration data, like sorting, etc
  *                                      # conf.skip:
  *                                          If@ the user want's to skip collection of data from the specified scheema.
- *                                          he can set skip to true
+ *                                          he can set skip to \[test\]
  *          [Function]       callback   The callback function (Lorem lipsum dolor sit amed)
  *  @desc:  Uses the provided scheema and conf data, to get data from MongoDB.
- *  @return: (Function]     Callback method with data from the scheema, and evt. errors.
+ *  @return: [Function]     Callback method with data from the scheema, and evt. errors.
  *                          Lorem Lipsum continuing to go fkndrgøjkner   bla bla bla
  *
  * */
@@ -408,14 +408,14 @@ function validateEpisodeNumber(media, conf) {
     }
 }
 /**
- *  @param: (Object)    Media   The specific show collected from the Database
- *          (Object)    conf    Configuration values. Obligated value: 'season'
- *          (Function)  callback    The callback function
+ *  @param: [Object]    Media   The specific show collected from the Database
+ *          [Object]    conf    Configuration values. Obligated value: 'season'
+ *          [Function]  callback    The callback function
  *  @desc:  Puts the data we are interested in, into the _r variable.
  *          Then checks if conf.season exists and is a valid number.
  *          Last, add the values season and episodes
  *
- *  @return: (Object) The whole season in print-friendly format
+ *  @return: [Object] The whole season in print-friendly format
  * */
 function createPrintableSeason(media, conf, callback) {
     var errorMsg = { title: "MEDIA PARSING ERROR", message: "", statusCode: 500 };
@@ -468,8 +468,8 @@ function checkIfMediaAlreadyExists(media, callback) {
     });
 }
 /**
- *  @param: (Object)    body    Is the request body, provided in a POST request
- *          (Function)  callback    The callback function
+ *  @param: [Object]    body    Is the request body, provided in a POST request
+ *          [Function]  callback    The callback function
  *
  *  @desc:  Takes the provided values in the req.body, and converts it into valid values
  *          for the database.
@@ -562,8 +562,10 @@ function createVidUrl(vidID, type, options) {
         url += vidID + ".mp4";
     }
     /**
-     *  @desc:  A number should always print out double digits (03 or 24) or more, even though the number is less than 10.
-     *          This function creates this printable version of the number.
+     *  @param:     [Number]    num     The number we want to make pretty-printable
+     *  @desc:      A number should always print out double digits (03 or 24) or more, even though the number is less than 10.
+     *              This function creates this printable version of the number.
+     *  @return:    [String]    Returnes a formatted number, i a more "printfriendly" way
      * */
     function getPrintableNumber(num) {
         var printNum = "";
