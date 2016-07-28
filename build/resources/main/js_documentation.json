@@ -1,0 +1,75 @@
+[
+  {
+    "function": "getDataFromScheema",
+    "parameters": [
+      {
+        "name": "Scheema",
+        "type": "MongoObject",
+        "details": "The mongodb Scheema to collect data from"
+      },
+      {
+        "name": "conf",
+        "type": "Object",
+        "details": "Different configuration data, like sorting, etc# conf.skip:If@ the user want's to skip collection of data from the specified scheema.he can set skip to \\[test\\]"
+      }
+    ],
+    "description": "*  @desc:  Uses the provided scheema and conf data, to get data from MongoDB.\n\n",
+    "returns": {
+      "type": "Function",
+      "details": "Callback method with data from the scheema, and evt. errors.\nLorem Lipsum continuing to go fkndrgøjkner   bla bla bla\n"
+    }
+  },
+  {
+    "function": "createPrintableSeason",
+    "parameters": [
+      {
+        "name": "Media",
+        "type": "Object",
+        "details": "The specific show collected from the Database"
+      },
+      {
+        "name": "conf",
+        "type": "Object",
+        "details": "Configuration values. Obligated value: 'season'"
+      }
+    ],
+    "description": "*  @desc:  Puts the data we are interested in, into the _r variable.\n*          Then checks if conf.season exists and is a valid number.\n*          Last, add the values season and episodes\n*\n\n",
+    "returns": {
+      "type": "Object",
+      "details": "The whole season in print-friendly format"
+    }
+  },
+  {
+    "function": "checkIfMediaAlreadyExists",
+    "parameters": [],
+    "description": "*  @desc:  Checks the collections 'movie' and 'tvshow' for an identical video\n",
+    "returns": {
+      "type": "<UNDEFINED>",
+      "details": "<NO DESCRIPTION>"
+    }
+  },
+  {
+    "function": "convertToMedia",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "details": "Is the request body, provided in a POST request"
+      }
+    ],
+    "description": "*  @desc:  Takes the provided values in the req.body, and converts it into valid values\n*          for the database.\n*\n*          NOTICE: The method parses som values, based on the specified 'mediatype'.\n*                  Currently only two mediatypes is accepted: movie and tv-show\n*\n",
+    "returns": {
+      "type": "<UNDEFINED>",
+      "details": "<NO DESCRIPTION>"
+    }
+  },
+  {
+    "function": "getPrintableNumber",
+    "parameters": [],
+    "description": "*  @desc:      A number should always print out double digits (03 or 24) or more, even though the number is less than 10.\n*              This function creates this printable version of the number.\n\n",
+    "returns": {
+      "type": "String",
+      "details": "Returnes a formatted number, i a more \"printfriendly\" way"
+    }
+  }
+]
