@@ -6,8 +6,10 @@ public class Main{
     private static int tries = 3;
 
     public static void main(String[] args){
+        DocuLogger jsDoc = new DocuLogger("./src/main/resources/api.js");
+        System.out.println(jsDoc.getJson());
 
-        run();
+        //run();
     }
 
     /*

@@ -44,7 +44,7 @@ public class Function {
 
     public Function(String function, String description){
         this.function = function;
-        this.description = description;
+        this.description = Description.parse(description);
 
     }
 

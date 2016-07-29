@@ -105,6 +105,14 @@ public class DocuLogger {
     }
 
 
+    /**
+     *  @param:     [String]    json        The json string
+     *              [String]    filename    The full filename
+     *  @desc:      Responsible for creating the json file.
+     *              First splits the json string into lines.
+     *              Then write the content into the file, with the charset UTF-8
+     *  @return     [Boolean]   IF everything went successfull, return True. If an IOException was thrown, return false
+     * */
     private boolean createOutFile(String json, String filename){
         /*
         *   The Filewrite system, writes into the file line by line.
