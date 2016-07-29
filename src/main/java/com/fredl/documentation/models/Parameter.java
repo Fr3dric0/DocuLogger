@@ -183,7 +183,6 @@ public class Parameter {
             if(m.find()){
                 String name = findName(buffer.substring( buffer.indexOf(m.group(0)) ));
 
-                //System.out.printf("\"%s\" : %s\n", name, t);
                 names.add(name); // Place the value in a HashMap
             }
 
