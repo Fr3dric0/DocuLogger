@@ -7,12 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17f69ee-1b3f-431f-882f-5cfd178300b6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/resources/main/Documentation.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/fredl/documentation/DocuLogger.class" afterPath="$PROJECT_DIR$/build/classes/main/com/fredl/documentation/DocuLogger.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/fredl/documentation/Main.class" afterPath="$PROJECT_DIR$/build/classes/main/com/fredl/documentation/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/fredl/documentation/models/Function.class" afterPath="$PROJECT_DIR$/build/classes/main/com/fredl/documentation/models/Function.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fredl/documentation/models/Description.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/fredl/documentation/models/Parameter.class" afterPath="$PROJECT_DIR$/build/classes/main/com/fredl/documentation/models/Parameter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fredl/documentation/models/Parameter.java" afterPath="$PROJECT_DIR$/src/main/java/com/fredl/documentation/models/Parameter.java" />
     </list>
     <ignored path="DocuLogger.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,8 +107,8 @@
       <file leaf-file-name="Description.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fredl/documentation/models/Description.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="41" />
+            <state relative-caret-position="167">
+              <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1103,7 +1100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1469812517815</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implemented description. Also included det &lt;br/&gt; tags, instead of \n">
+      <created>1469816190363</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1469816190363</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1149,7 +1153,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33224222" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33224222" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1184,7 +1188,8 @@
     <MESSAGE value="Finished CommentExtractor for JavaScript. Also added a simple terminal user menu" />
     <MESSAGE value="Code optimization" />
     <MESSAGE value="Implementing of Description-object, for handling the parsing of the description" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing of Description-object, for handling the parsing of the description" />
+    <MESSAGE value="Implemented description. Also included det &lt;br/&gt; tags, instead of \n" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented description. Also included det &lt;br/&gt; tags, instead of \n" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1517,8 +1522,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fredl/documentation/models/Description.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="41" />
+        <state relative-caret-position="167">
+          <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
