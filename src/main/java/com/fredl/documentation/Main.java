@@ -15,10 +15,11 @@ public class Main{
     * */
     private static void run(){
         Scanner sc = new Scanner(System.in);
-        String inPath = "";
-        String outPath = "";
+        String inPath;
+        String outPath;
         System.out.println("VELKOMMEN TIL DocuLogger");
 
+        // Get path to JavaScript program
         while(true){
             System.out.print("Namnet på programmet ditt: ");
             inPath = sc.nextLine();
@@ -30,17 +31,16 @@ public class Main{
             }
         }
 
+        // Get directory to where the user want's the json file to go
         System.out.println("Flott. No trenger vi bere å vite kvar du vil skrive ut programmet ditt");
-        while(true){
-            System.out.print("Bane: ");
-            outPath = sc.nextLine();
+        System.out.print("Bane: ");
+        outPath = sc.nextLine();
 
-            break;
-        }
-
+        // Instanciate the DocuLogger object,
+        // and run the makeFile method
         try{
-            DocuLogger apiJSLogger = new DocuLogger(inPath, outPath);
-
+            DocuLogger apiJSLogger = new DocuLogger(inPath);
+            apiJSLogger.makeFile(outPath);
         }catch(NullPointerException npe){
             System.err.println("JavaScript fila finst ikkje!");
             tries--;
@@ -52,7 +52,6 @@ public class Main{
                 System.out.println("Programmet kunne ikkje køyre.\nHa ein fin dag!");
                 System.exit(-1);
             }
-            return;
         }
 
     }

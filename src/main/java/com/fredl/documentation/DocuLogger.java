@@ -31,13 +31,13 @@ import java.util.List;
 public class DocuLogger {
     private Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create(); // Enable pretty formatting
     private File inFile;
-    public static final String OUT_FILE_NAME = "js_documentation";
-    public static final String OUT_FILE_TYPE = ".json";
+    private static final String OUT_FILE_NAME = "js_documentation";
+    private static final String OUT_FILE_TYPE = ".json";
     private String inJson = "";
     private boolean fileCreated = false;
     private String writeErrorMessage = "";
 
-    public DocuLogger(String path, String outFolder){
+    public DocuLogger(String path){
 
         if(!fileExists(path)){
             throw new NullPointerException("File does not exist!");
@@ -45,13 +45,14 @@ public class DocuLogger {
 
         SupportedFiles filetype = FileIdentifier.identify(path);
 
-        // The controller which masters the extraction.
+        // Extract the comments from the file
         CommentExtractor extractor = new CommentExtractor(path, filetype);
-
         ArrayList<Comment> comments = extractor.extract();
 
+        // List of all the mapped comments
         ArrayList<Function> funcList = new ArrayList<>();
 
+        // Map comments, and place in fundList
         for(Comment com : comments){
             CommentMapper cm = new CommentMapper(com);
 
@@ -60,11 +61,49 @@ public class DocuLogger {
             }
         }
 
+        // Convert comment and documentation to JSON
         this.inJson = gson.toJson(funcList);
 
-        fileCreated = this.createOutFile(this.inJson, String.format("%s%s%s", outFolder, OUT_FILE_NAME, OUT_FILE_TYPE));
-
     }
+
+    public boolean makeFile(String dir){
+        return makeFile(dir, OUT_FILE_NAME);
+    }
+
+    /**
+     *  @param:     [String]    dir         The directory to where the file should go
+     *              [String]    filename    Filename for the json file
+     *  @desc:      Checks that the arguments are valid. Then calls the createOutMethod
+     *  @return:    [Boolean]   True if the file vas created successfully. If not, false
+     * */
+    public boolean makeFile(String dir, String filename){
+        if(filename.length() < 1){
+            throw new IllegalArgumentException("Empty filename not supported!");
+        }
+
+        // If the slash sign isn't at the end of the directory. Just add it
+        if(!dir.substring(dir.length()-1, dir.length()).equals("/")){
+            dir = dir + "/";
+        }
+
+        // Check if the .json fileending is included in the filename
+        if(filename.substring(filename.length()-OUT_FILE_TYPE.length(), filename.length()).equals(OUT_FILE_TYPE)){
+            filename = filename.substring(0, filename.length()-OUT_FILE_TYPE.length());
+        }
+
+        return this.createOutFile(this.inJson, String.format("%s%s%s", dir, filename, OUT_FILE_TYPE));
+    }
+
+    public String getJson(){
+        return this.inJson;
+    }
+    public String getFileWriteError(){
+        return writeErrorMessage;
+    }
+    public boolean outFileCreated(){
+        return fileCreated;
+    }
+
 
     private boolean createOutFile(String json, String filename){
         /*
@@ -84,7 +123,6 @@ public class DocuLogger {
 
         return true;
     }
-
 
     /**
      *  @param: (String)    path    Path to the file

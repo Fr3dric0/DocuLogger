@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DocuLogger.iml" filepath="$PROJECT_DIR$/DocuLogger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DocuLogger.iml" filepath="$PROJECT_DIR$/.idea/modules/DocuLogger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DocuLogger_main.iml" filepath="$PROJECT_DIR$/.idea/modules/DocuLogger_main.iml" group="DocuLogger" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DocuLogger_test.iml" filepath="$PROJECT_DIR$/.idea/modules/DocuLogger_test.iml" group="DocuLogger" />
     </modules>
   </component>
 </project>
