@@ -11,13 +11,13 @@ public class Main{
     }
 
     /*
-    *   @desc: Eit lite terminalbassert gui
+    *   @desc: Eit lite terminalbasert gui
     * */
     private static void run(){
         Scanner sc = new Scanner(System.in);
         String inPath;
         String outPath;
-        System.out.println("VELKOMMEN TIL DocuLogger");
+        System.out.println("DocuLogger");
 
         // Get path to JavaScript program
         while(true){
